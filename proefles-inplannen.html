@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gratis proefles inplannen — Bijles Purmerend</title>
+  <meta name="description" content="Plan zelf binnen enkele minuten je gratis en vrijblijvende proefles in via onze online agenda.">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo" href="index.html">
+        <img src="images/logo.svg" alt="" width="32" height="32">
+        Bijles Purmerend
+      </a>
+      <nav class="nav-links" id="nav-links" aria-label="Hoofdmenu">
+        <a href="index.html#waarom-ons">Waarom ons</a>
+        <a href="over-ons.html">Over ons</a>
+        <a href="vakken.html">Vakken</a>
+        <a href="tarieven.html">Tarieven</a>
+        <a href="ervaringen.html">Ervaringen</a>
+        <a href="index.html#faq">FAQ</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn--primary nav-cta" href="proefles-inplannen.html">Gratis proefles</a>
+        <button class="nav-toggle" aria-label="Menu openen" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="page-header">
+      <div class="container">
+        <span class="eyebrow">Gratis proefles</span>
+        <h1>Plan zelf je gratis proefles in</h1>
+        <p>Kies hieronder een moment dat jou uitkomt. De eerste les van 45 minuten is altijd gratis en vrijblijvend.</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+
+        <!--
+          ====================================================================
+          GOOGLE AGENDA — AFSPRAAKSCHEMA (booking-widget)
+          ====================================================================
+          Vervang [GOOGLE_AGENDA_EMBED_URL] hieronder door de embed-URL van je
+          eigen Google Agenda-afspraakschema. Volg de stappen in
+          GOOGLE-AGENDA-INSTRUCTIES.md om dit afspraakschema aan te maken en
+          de juiste URL op te halen.
+
+          Voorbeeld van hoe de src eruit gaat zien (niet klakkeloos kopiëren,
+          dit is een voorbeeld-URL, geen echte):
+          src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ...?gv=true"
+          ====================================================================
+        -->
+        <div class="booking-frame-wrap" id="booking-frame-wrap">
+          <iframe
+            id="agenda-iframe"
+            data-src="[GOOGLE_AGENDA_EMBED_URL]"
+            title="Plan je gratis proefles in via Google Agenda"
+            loading="lazy"
+            hidden>
+          </iframe>
+        </div>
+
+        <div class="booking-fallback">
+          <p><strong>Lukt inplannen via de agenda niet, of zie je hierboven nog niets?</strong></p>
+          <!-- PLACEHOLDERS: vul hier de echte contactgegevens in zodra bekend. -->
+          <p>Neem gerust contact op via <a href="tel:[TELEFOONNUMMER]">[TELEFOONNUMMER]</a>,
+             <a href="mailto:[EMAIL]">[EMAIL]</a> of
+             <a href="[WHATSAPP LINK]">WhatsApp</a> — dan plannen we samen een moment.</p>
+        </div>
+
+        <div class="section-intro mt-6">
+          <span class="eyebrow">Goed om te weten</span>
+          <h2>Wat je kunt verwachten</h2>
+        </div>
+        <div class="grid grid--3">
+          <div class="card">
+            <div class="card-icon">🕒</div>
+            <h3>45 minuten</h3>
+            <p>De proefles duurt 45 minuten, net als een reguliere bijles.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">📍</div>
+            <h3>Aan huis of Bibliotheek Waterland</h3>
+            <p>Bij jou thuis in Purmerend en omstreken, of in Bibliotheek Waterland (Waterlandlaan 40, Purmerend).</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🆓</div>
+            <h3>Gratis &amp; vrijblijvend</h3>
+            <p>Geen verplichtingen achteraf — jij beslist of je verder gaat.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Bijles Purmerend</h4>
+          <p>1-op-1 bijles in Purmerend en omstreken. Gratis en vrijblijvende proefles, persoonlijk leerplan, betaalbare tarieven.</p>
+        </div>
+        <div>
+          <h4>Snel naar</h4>
+          <ul>
+            <li><a href="vakken.html">Vakken</a></li>
+            <li><a href="tarieven.html">Tarieven</a></li>
+            <li><a href="over-ons.html">Over ons</a></li>
+            <li><a href="ervaringen.html">Ervaringen</a></li>
+            <li><a href="proefles-inplannen.html">Gratis proefles inplannen</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <!-- PLACEHOLDERS: vul hier de echte contactgegevens in. Zoek in het hele
+               project op "[" om alle placeholders terug te vinden (zie SETUP.md). -->
+          <ul>
+            <li>Tel: <a href="tel:[TELEFOONNUMMER]">[TELEFOONNUMMER]</a></li>
+            <li>E-mail: <a href="mailto:[EMAIL]">[EMAIL]</a></li>
+            <li><a href="[WHATSAPP LINK]">WhatsApp ons</a></li>
+            <li>Purmerend en omstreken</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span data-year></span> Bijles Purmerend</span>
+        <span><a href="[GOOGLE_BUSINESS_PROFIEL_LINK]">Bekijk onze Google reviews</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    (function () {
+      var iframe = document.getElementById("agenda-iframe");
+      var wrap = document.getElementById("booking-frame-wrap");
+      var src = iframe.getAttribute("data-src");
+      if (!src || src.indexOf("[") !== -1) {
+        wrap.innerHTML =
+          '<div class="empty-state">' +
+          "<p><strong>De online agenda wordt binnenkort gekoppeld.</strong></p>" +
+          "<p>Gebruik ondertussen de contactgegevens hieronder om een gratis proefles in te plannen.</p>" +
+          "</div>";
+      } else {
+        iframe.src = src;
+        iframe.hidden = false;
+      }
+    })();
+  </script>
+</body>
+</html>
