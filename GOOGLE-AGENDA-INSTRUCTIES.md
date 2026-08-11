@@ -29,17 +29,55 @@ mensen bijles gaan geven.
 3. Zet er eventueel een kleine buffer tussen (bijv. 15 minuten), zodat je niet
    direct van de ene naar de andere afspraak hoeft.
 
-## Stap 4 — Voeg eventueel extra vragen toe (aanbevolen)
+## Stap 4 — Voeg intakevragen toe (aanbevolen: vak + niveau altijd toevoegen)
 
 Onder **Intakeformulier** of **Aangepaste vragen** kun je velden toevoegen die
-een bezoeker moet invullen bij het boeken, bijvoorbeeld:
+een bezoeker moet invullen bij het boeken. Voeg in elk geval deze twee toe en
+zet ze op **verplicht**, zodat je vóór de proefles al weet waar de leerling
+hulp bij nodig heeft:
+
+1. **Vak(ken) waar bijles voor gewenst is** — kies vraagtype "Keuzelijst"
+   (meerdere antwoorden toestaan) met deze opties, gelijk aan de lijst op
+   `vakken.html`:
+   - Wiskunde A
+   - Wiskunde B
+   - Natuurkunde
+   - Scheikunde
+   - NaSk
+   - Economie
+   - Bedrijfseconomie
+   - Geschiedenis
+   - Aardrijkskunde
+   - Biologie
+   - Nederlands
+   - Engels
+   - Latijn
+   - Grieks
+   - Begrijpend lezen (basisschool)
+   - Rekenen (basisschool)
+   - Taal (basisschool)
+   - Wereldoriëntatie & presentaties (basisschool)
+   - Anders, namelijk... (vrij tekstveld)
+
+2. **Niveau en leerjaar** — vraagtype "Keuzelijst" (één antwoord) met opties:
+   - Basisschool
+   - VMBO
+   - HAVO
+   - VWO (incl. Gymnasium)
+   - MBO
+   - Anders, namelijk... (vrij tekstveld)
+
+   Voeg er evt. een los tekstveld "Leerjaar" aan toe (bijv. "3 HAVO").
+
+Optioneel kun je ook nog toevoegen:
 
 - Naam van de leerling
-- Vak(ken) waar bijles voor gewenst is
-- Niveau (bijv. VMBO, HAVO, VWO, basisschool) en leerjaar
 - Telefoonnummer van ouder/verzorger (indien van toepassing)
 
-Zo weet je vóór de proefles al waar de leerling hulp bij nodig heeft.
+Deze antwoorden komen automatisch mee in de bevestigingsmail en in de agenda-
+afspraak zelf — er is geen aparte koppeling met de website nodig. Wil je de
+lijst met vakken op `vakken.html` later aanpassen, werk dan ook deze
+intakevraag in Google Agenda bij zodat ze in sync blijven.
 
 ## Stap 5 — Publiceer het afspraakschema
 
