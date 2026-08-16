@@ -5,13 +5,16 @@ geen server nodig. Gewoon HTML, CSS en vanilla JavaScript.
 
 ## Bestanden
 
-- `index.html`, `vakken.html`, `tarieven.html`, `over-ons.html`,
-  `ervaringen.html`, `proefles-inplannen.html`, `contact.html`, `404.html` —
-  de pagina's van de site.
+- `index.html`, `vakken.html`, `over-ons.html`,
+  `proefles-inplannen.html`, `contact.html`, `404.html` —
+  de pagina's van de site. Tarieven staan als sectie op `index.html`
+  (`#tarieven`), er is geen aparte tarieven-pagina. Er is (voor nu) ook
+  geen aparte ervaringen-pagina, tot er echte klantreviews zijn.
 - `css/style.css` — alle opmaak (kleuren, layout, componenten).
 - `js/main.js` — mobiel menu, actieve navigatielink, footer-jaartal.
-- `js/reviews-data.js`, `js/gallery-data.js` — hier voeg je later zelf
-  reviews en foto's toe (zie instructies bovenin die bestanden).
+- `js/reviews-data.js`, `js/gallery-data.js` — (nog) niet gekoppeld aan een
+  pagina; hier voeg je later zelf reviews en foto's toe, zodra de
+  ervaringen-pagina terugkomt (zie instructies bovenin die bestanden).
 - `images/` — logo en mappen voor foto's, met uitleg per map.
 - `SETUP.md` — wat je nog zelf moet doen (placeholders invullen, Google
   Agenda koppelen, publiceren).

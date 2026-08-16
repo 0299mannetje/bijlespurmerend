@@ -20,7 +20,11 @@ then open `http://localhost:8000`. Or just double-click any `.html` file to open
 
 ### No templating — header/nav/footer are copy-pasted per page
 
-Each of the 8 top-level pages (`index.html`, `vakken.html`, `tarieven.html`, `over-ons.html`, `ervaringen.html`, `proefles-inplannen.html`, `contact.html`, `404.html`) contains a **byte-identical** copy of the `<header class="site-header">` nav block and the `<footer class="site-footer">` block. This is intentional (fetch-based includes don't work under `file://`), but it means **any nav or footer change must be applied to all 8 files**, not just one. There is no build step to keep them in sync — check them all by hand (or with a project-wide find/replace).
+Each of the 6 top-level pages (`index.html`, `vakken.html`, `over-ons.html`, `proefles-inplannen.html`, `contact.html`, `404.html`) contains a **byte-identical** copy of the `<header class="site-header">` nav block and the `<footer class="site-footer">` block. This is intentional (fetch-based includes don't work under `file://`), but it means **any nav or footer change must be applied to all 6 files**, not just one. There is no build step to keep them in sync — check them all by hand (or with a project-wide find/replace).
+
+There is no "Ervaringen" (reviews) page for now — it was removed until there are real customer reviews to show. The nav/footer link and the homepage teaser section are gone; `js/reviews-data.js` and `js/gallery-data.js` still exist (unused) as scaffolding for when reviews come back.
+
+There is no standalone tarieven page — pricing lives in the "Tarieven" section (`id="tarieven"`) on `index.html`. Every page's "Tarieven" nav/footer link points to `index.html#tarieven`.
 
 `js/main.js` marks the active nav link by comparing `location.pathname` against each `<a href>` (stripped of any `#anchor`) — it does not need per-page config.
 
@@ -32,7 +36,7 @@ Responsive breakpoints: mobile nav collapses to a hamburger (`.nav-toggle`) unde
 
 ### Editable content lives in small JS data files, not a CMS
 
-`js/reviews-data.js` and `js/gallery-data.js` each export a plain array (`BIJLES_REVIEWS`, `BIJLES_GALLERY`) plus a `renderReviews()`/`renderGallery()` function that injects markup into a container `id` passed by the calling page. Both render an `.empty-state` placeholder message when the array is empty, so the site never shows broken images or a blank section before real content exists. `index.html` renders a 3-item teaser (`renderReviews('reviews-teaser', {limit:3})`); `ervaringen.html` renders the full lists. When adding real reviews/photos, edit the arrays in place — don't introduce a build step or fetch a JSON file for this.
+`js/reviews-data.js` and `js/gallery-data.js` each export a plain array (`BIJLES_REVIEWS`, `BIJLES_GALLERY`) plus a `renderReviews()`/`renderGallery()` function that injects markup into a container `id` passed by the calling page. Both render an `.empty-state` placeholder message when the array is empty, so the site never shows broken images or a blank section before real content exists. Neither script is currently included on any page — the "Ervaringen" page and homepage teaser that used them were removed until there are real reviews. When reviews come back, edit the arrays in place — don't introduce a build step or fetch a JSON file for this.
 
 ### Booking page: Google Calendar iframe must degrade gracefully
 
