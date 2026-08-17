@@ -553,6 +553,11 @@ h3 {
 }
 
 /* Tarieven */
+.pricing-table-wrap {
+  position: relative;
+  margin-bottom: var(--space-5);
+}
+
 .pricing-table {
   width: 100%;
   border-collapse: collapse;
@@ -560,6 +565,33 @@ h3 {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   overflow: hidden;
+}
+
+.pricing-ribbon {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translate(15%, 65%) rotate(-3deg);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--color-accent);
+  color: var(--color-primary-dark);
+  font-weight: 800;
+  font-size: 1.3rem;
+  padding: var(--space-3) var(--space-5);
+  border-radius: 999px;
+  box-shadow: var(--shadow-lg);
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .pricing-ribbon {
+    right: 50%;
+    transform: translate(50%, 50%) rotate(-3deg);
+    font-size: 0.95rem;
+    padding: var(--space-2) var(--space-4);
+  }
 }
 
 .pricing-table th,
