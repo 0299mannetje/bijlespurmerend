@@ -299,6 +299,11 @@ h3 {
 
   .nav-toggle {
     display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    font-size: 1.1rem;
   }
 }
 
@@ -514,7 +519,6 @@ h3 {
   }
   .hero-visual {
     min-height: 220px;
-    order: -1;
     transform: rotate(-1.5deg);
   }
 }
@@ -553,7 +557,7 @@ h3 {
 }
 
 /* Tarieven */
-.pricing-table-wrap {
+.pricing-wrap {
   position: relative;
   margin-bottom: var(--space-5);
 }
@@ -565,33 +569,6 @@ h3 {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   overflow: hidden;
-}
-
-.pricing-ribbon {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  transform: translate(15%, 65%) rotate(-3deg);
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  background: var(--color-accent);
-  color: var(--color-primary-dark);
-  font-weight: 800;
-  font-size: 1.3rem;
-  padding: var(--space-3) var(--space-5);
-  border-radius: 999px;
-  box-shadow: var(--shadow-lg);
-  white-space: nowrap;
-}
-
-@media (max-width: 640px) {
-  .pricing-ribbon {
-    right: 50%;
-    transform: translate(50%, 50%) rotate(-3deg);
-    font-size: 0.95rem;
-    padding: var(--space-2) var(--space-4);
-  }
 }
 
 .pricing-table th,
@@ -615,6 +592,82 @@ h3 {
   font-weight: 700;
 }
 
+.pricing-table tbody tr.is-highlight .price-was {
+  color: var(--color-deal-was);
+  font-weight: 700;
+}
+
+.pricing-table tbody tr.is-highlight .price-now {
+  color: var(--color-deal-now);
+  font-weight: 800;
+}
+
+/* Standaard (tablet/laptop/desktop): tabel tonen, kaarten verbergen */
+.pricing-cards-view {
+  display: none;
+}
+
+/* Telefoon: kaarten tonen, tabel verbergen */
+@media (max-width: 640px) {
+  .pricing-table-view {
+    display: none;
+  }
+  .pricing-cards-view {
+    display: grid;
+  }
+}
+
+.pricing-list {
+  margin-top: var(--space-4);
+}
+
+.pricing-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.pricing-list li:last-child {
+  border-bottom: none;
+}
+
+.pricing-list li.is-highlight {
+  background: var(--color-success-bg);
+  font-weight: 700;
+  margin: 0 calc(-1 * var(--space-5));
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius);
+  border-bottom: none;
+}
+
+.pricing-ribbon {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translate(0, 65%) rotate(-3deg);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--color-accent);
+  color: var(--color-primary-dark);
+  font-weight: 800;
+  font-size: 1.3rem;
+  padding: var(--space-3) var(--space-5);
+  border-radius: 999px;
+  box-shadow: var(--shadow-lg);
+  white-space: nowrap;
+}
+
+@media (max-width: 1024px) {
+  .pricing-ribbon {
+    font-size: 0.95rem;
+    padding: var(--space-2) var(--space-4);
+  }
+}
+
 .price-was {
   color: var(--color-text);
   text-decoration: line-through;
@@ -628,12 +681,12 @@ h3 {
   font-size: 1.1em;
 }
 
-.pricing-table tbody tr.is-highlight .price-was {
+.pricing-list li.is-highlight .price-was {
   color: var(--color-deal-was);
   font-weight: 700;
 }
 
-.pricing-table tbody tr.is-highlight .price-now {
+.pricing-list li.is-highlight .price-now {
   color: var(--color-deal-now);
   font-weight: 800;
 }
@@ -838,6 +891,34 @@ h3 {
   .footer-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ---------- Zwevend WhatsApp-icoon ---------- */
+.whatsapp-float {
+  position: fixed;
+  right: var(--space-5);
+  bottom: var(--space-5);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  z-index: 60;
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-float:hover,
+.whatsapp-float:focus-visible {
+  transform: scale(1.08);
+}
+
+.whatsapp-float svg {
+  width: 30px;
+  height: 30px;
+  fill: #fff;
 }
 
 /* ---------- Utility ---------- */
