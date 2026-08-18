@@ -237,8 +237,14 @@ h3 {
 }
 
 .logo img {
-  height: 32px;
-  width: 32px;
+  height: 40px;
+  width: auto;
+}
+
+@media (min-width: 861px) {
+  .logo img {
+    height: 56px;
+  }
 }
 
 .nav-links {
