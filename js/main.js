@@ -27,7 +27,71 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   renderPricingCards();
+  initScholenForm();
 });
+
+// Verzending van het scholen-aanvraagformulier (scholen.html) via Formspree.
+// Zolang het action-attribuut nog de letterlijke placeholder [FORMSPREE_ENDPOINT]
+// bevat (zie FORMSPREE-INSTRUCTIES.md), wordt er niets verstuurd en tonen we
+// een nette "nog niet gekoppeld"-melding, zodat een vergeten placeholder nooit
+// een kapotte of stille fout oplevert voor een bezoeker.
+function initScholenForm() {
+  var form = document.getElementById("scholen-contact-form");
+  if (!form) {
+    return;
+  }
+
+  var success = document.getElementById("scholen-form-success");
+  var error = document.getElementById("scholen-form-error");
+  var endpoint = form.getAttribute("action");
+  var isConfigured = endpoint && endpoint.indexOf("[") === -1;
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    if (success) {
+      success.hidden = true;
+    }
+    if (error) {
+      error.hidden = true;
+    }
+
+    if (!isConfigured) {
+      if (error) {
+        error.textContent =
+          "Dit formulier wordt nog gekoppeld. Neem ondertussen contact op via telefoon, e-mail of WhatsApp hiernaast.";
+        error.hidden = false;
+      }
+      return;
+    }
+
+    fetch(endpoint, {
+      method: "POST",
+      body: new FormData(form),
+      headers: { Accept: "application/json" },
+    })
+      .then(function (response) {
+        if (response.ok) {
+          if (success) {
+            success.hidden = false;
+          }
+          form.reset();
+        } else if (error) {
+          error.hidden = false;
+        }
+      })
+      .catch(function () {
+        if (error) {
+          error.hidden = false;
+        }
+      });
+  });
+}
 
 // Bouwt de tarieven-kaartjes voor telefoon (.pricing-cards-view) op uit de
 // tarieventabel (.pricing-table), zodat prijzen maar op één plek (de tabel)
