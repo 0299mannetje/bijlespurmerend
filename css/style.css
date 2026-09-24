@@ -219,6 +219,13 @@ h3 {
   box-shadow: var(--shadow);
 }
 
+@media (max-width: 640px) {
+  .lesmomenten-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2);
+  }
+}
+
 /* ---------- Header / navigatie ---------- */
 .site-header {
   position: sticky;
@@ -511,6 +518,13 @@ h3 {
   flex-wrap: wrap;
   gap: var(--space-3);
   margin-top: var(--space-5);
+}
+
+@media (max-width: 640px) {
+  .hero-meta .badge {
+    font-size: 0.75rem;
+    padding: var(--space-1) var(--space-2);
+  }
 }
 
 .hero-visual {
